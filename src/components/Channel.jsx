@@ -5,14 +5,12 @@ import { firestore, firebase } from "../services/firebase";
 
 
 const messageRef = firestore.collection("messages");
-const messageQuery = messageRef.orderBy("createdAt", "desc").limit(2);
+const messageQuery = messageRef.orderBy("createdAt", "desc").limit(100);
 
 const Channel = ()=>{
     const [text, setText] = useState("");
     const {logout, user} = useUser();
     const [messages, loading, error] = useCollectionData(messageQuery, {idField: "id"});
-
-    console.log(messages);
 
     const sendMessage = (event)=>{
         event.preventDefault();
@@ -38,29 +36,32 @@ const Channel = ()=>{
     if(loading){
         return(<h1>Loading...</h1>)
     }
-
+    console.log(error);
     if(error){
         return(<h1>Ocurrió un error :c</h1>)
     }
 
     return(
-        <section>
-            <button onClick={logout}>Logout</button>
-            <section>
+        <>  
+            <div className="logout">
+            <button onClick={logout} className="button logoutButton">Logout</button>
+            <h2 className="titulo">Bienvenido al chat de Firebase</h2>
+            </div>
+            <section className="mensajes">
                 {messages && messages.reverse().map(({text, displayName, id, photoURL}) => (
-                    <div id={id} className="mensaje">
-                        <img src={photoURL} />
-                        <p>{displayName}: </p>
-                        <p>{text}</p>
+                    <div key={id} className="mensaje">
+                        <img src={photoURL} className="imagen"/>
+                        <b>{displayName}&nbsp;:&nbsp;</b>
+                        <p> {text}</p>
                     </div>
                 ))}
             </section>
 
-            <form onSubmit={sendMessage}>
-                <input type="text" value={text} onChange={e => setText(e.target.value)}/>
-                <button>Enviar</button>
+            <form onSubmit={sendMessage} className="send">
+                <input type="text" value={text} onChange={e => setText(e.target.value)} className="input"/>
+                <button className="button">Enviar</button>
             </form>  
-        </section>
+        </>
     )
 }
 

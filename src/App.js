@@ -7,7 +7,8 @@ function App() {
 
   return (
     <div>
-      {user?<Channel />:<button onClick={login  }>Login with Google</button>}
+      {user?<Channel />:<div className="login"><h1>Para usar el chat inicia sesión</h1>
+                        <button onClick={ login } className="button">Login with Google</button></div>}
     </div>
 
   );

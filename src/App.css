@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@300&display=swap');
+
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #4a0072;
+    font-family: 'Mulish', sans-serif;
+}
+
+.send{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 100vw;
+    bottom: 0px;
+}
+
+.button{
+    text-decoration: none;
+    outline: none;
+    background-color: transparent;
+    color: whitesmoke;
+    border: solid whitesmoke;
+    padding: .5rem;
+    font-family: inherit;
+}
+
+.input{
+    text-decoration: none;
+    outline: none;
+    font-family: inherit;
+    background-color: #7b1fa2;
+    border: solid whitesmoke;
+    height: 4vh;
+    width: 80vw;
+    color: whitesmoke;
+    padding: .3rem;
+    font-size: 1rem;
+    padding-left: 1rem;
+}
+
+.button:hover{
+    cursor: pointer;
+    background-color: #7b1fa2;
+}
+
+.logout{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row-reverse;
+    margin-right: 2rem;
+    margin-top: 1rem;
+}
+
+.logoutButton{
+    margin-left: auto;
+}
+
+h2, h1{
+    color: whitesmoke;
+}
+
+.login{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40vh;
+}
+
+.mensajes{
+    border: solid whitesmoke;
+    height: 70vh;
+    margin: 2rem;
+    padding: 0 2rem 0rem 2rem;
+    overflow: auto;
+}
+
+.mensajes img{
+    border-radius: 100%;
+    height: 30px;
+    margin-right: 1rem;
+}
+
+.mensaje{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: whitesmoke;
+    background-color: #7b1fa2;
+    margin: 1rem;
+    padding-left: 1rem;
+    border-radius: 10px;
+}
+
+.titulo{
+    margin: 0 0 0 auto;
+}
