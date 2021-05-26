@@ -50,7 +50,7 @@ const Channel = ()=>{
             <section className="mensajes">
                 {messages && messages.reverse().map(({text, displayName, id, photoURL}) => (
                     <div key={id} className="mensaje">
-                        <img src={photoURL} className="imagen"/>
+                        <img src={photoURL} className="imagen" alt={displayName}/>
                         <b>{displayName}&nbsp;:&nbsp;</b>
                         <p> {text}</p>
                     </div>
